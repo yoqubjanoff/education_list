@@ -12,11 +12,13 @@ function Root() {
   const [editData, setEditData] = useState(null);
   const [singleData, setSingleData] = useState(null);
 
+  const navigate = useNavigate()
   useEffect(() => {
     if (!localStorage.getItem("token")) {
-      <Outlet />;
+      navigate("/login"); 
     }
-  }, [window.location.pathname]);
+  }, []); 
+  
 
   return (
     <>
